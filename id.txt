@@ -1,0 +1,5 @@
+0 = good
+1 = not filled in
+2 = auth error
+3 = other error
+

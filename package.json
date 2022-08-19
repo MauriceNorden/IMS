@@ -1,0 +1,19 @@
+{
+  "name": "link-manager",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node ./src/main.js",
+    "test": "node ./src/test.js"
+  },
+  "author": "Maurice Norden",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.20.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.0",
+    "express": "^4.17.3",
+    "sync-mysql": "^3.0.1"
+  }
+}
