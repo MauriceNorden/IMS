@@ -10,7 +10,7 @@ const controlAuth = (token) => {
     }
 
     else (query.username == username && query.password == password);{
-        return {'code': 0 };
+        return {'code': 0, userid: query.id};
     }
 }
 exports.controlAuth = controlAuth;

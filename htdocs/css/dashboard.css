@@ -1,4 +1,117 @@
-body{
-    margin: auto;
-    font-family: Arial, Helvetica, sans-serif;
+#list-div div {
+    border: 2px solid black;
+    padding: 10px;
+    width: calc(50% - 23px);
+    float: left;
+    margin-bottom: -2px;
+    margin-right: -2px;
+}
+.edit-btn{
+    border: none;
+    background-color: black;
+    color: white;
+    padding: 15px;
+}
+
+
+
+
+
+
+#edit-div {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: none;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 2;
+    cursor: pointer;
+
+}
+
+
+
+#edit-div form {
+    margin-top: 100px;
+    width: 50%;
+    height: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#edit-div form input, #edit-div form select {
+    padding: 10px;
+    margin: 10px;
+    width: calc(100% - 44px);
+    border: 2px solid black;
+    background-color: white;
+    display: block; 
+}
+
+#edit-div form select{
+    width: calc(100% - 20px);
+
+}
+
+#edit-div form input[type="submit"] {
+    width: calc(100% - 20px);
+    border: none;
+    background-color: black;
+    color: white;
+    display: block;
+}
+
+
+
+
+
+@media screen and (max-width: 835px) {
+    #list-div div {
+        width: calc(100% - 24px);
+    }
+
+    #edit-div form{
+        width: calc(100% - 24px);
+    }
+    #username{
+        display: none;
+    }
+}
+
+
+.close-btn{
+    float: right;
+
+    border: none;
+    padding: 10px 15px ;
+    background-color: white;
+    color: black;
+    font-weight: bold;
+}
+
+
+
+
+#error-div{
+    width: calc(100% - 40px);
+    background-color: red;
+    padding: 10px 20px;
+    display: none;
+}
+
+#error-div p{
+    color: white;
+    font-weight: bold;
+    padding: 8px;
+    margin: 0px;
+}
+
+.target-div{
+    display: block;
 }

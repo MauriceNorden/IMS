@@ -1,7 +1,28 @@
-<h1>DASHBHOARD</h1>
-<p id="username"></p>
-<button onclick="logout()">logout</button>
+<script>
+
+</script>
 
 
+<div id="error-div" class="hide-target">
+  <button class="close-btn" onclick="hideMenu(0)">X</button>
+
+  <p id="error-message">Succes</p>
+</div>
 <div id="list-div">
 </div>
+
+<div id="edit-div" class="hide-target">
+    <button class="close-btn" onclick="hideMenu(1)">X</button>
+    <form id="edit-form">
+      <select id="category-list">
+
+      </select>
+        <input type="text" id="product-input">
+        <input type="number" id="amount-input">
+        <input type="number" id="rowid-input">
+        <input type="submit" value="submit">
+    </form>
+</div>
+
+
+

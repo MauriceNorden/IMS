@@ -10,7 +10,10 @@ const { getToken } = require("./requests/getToken");
 const { addCategory } = require("./requests/addCategory");
 const { addUser } = require("./requests/addUser");
 const { logUserin } = require("./requests/logUserin");
-const { getAllitems } = require("./requests/getAllitems");
+const { getItems } = require("./requests/getIems");
+const { getItem } = require("./requests/getItem");
+const { getCategory } = require("./requests/getCategory");
+const { editObject } = require("./requests/editObject");
 
 
 app.use(cors());
@@ -33,14 +36,25 @@ app.post(`/${version}/logUserin`, (req, res, next) => {
     res.json(logUserin(req));
 });
 
-app.post(`/${version}/getAllitems`, (req, res, next) => {
-    res.json(getAllitems(req));
+app.post(`/${version}/getItems`, (req, res, next) => {
+    res.json(getItems(req));
 });
 
 
-app.post(`/${version}/getToken`, (req, res, next) => {
-    res.json(getToken(req));
+app.post(`/${version}/getItem`, (req, res, next) => {
+    res.json(getItem(req));
 });
+
+app.post(`/${version}/getCategory`, (req, res, next) => {
+    res.json(getCategory(req));
+});
+
+app.post(`/${version}/editObject`, (req, res, next) => {
+    res.json(editObject(req));
+});
+
+
+
 
 app.get("/", (req, res) => {
     res.send("404");

@@ -18,10 +18,11 @@ form {
     transform: translate(-50%, -50%);
 }
 
-form input {
-    width: 100%;
+form input[type="text"],form input[type="password"] {
+    width: calc(100% - 44px);
     padding: 10px;
     margin: 10px;
+    border: 2px solid black;
 }
 
 form input:focus{
@@ -29,6 +30,32 @@ form input:focus{
 }
 
 form input[type="submit"] {
-    width: calc(100% + 25px);
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin: 10px;
+    background-color: black;
+    color: white;
+    border: none;
 }
 
+@media screen and (max-width: 600px) {
+    form {
+        width: 100%;
+    }
+}
+
+
+
+#error-div{
+    width: calc(100% - 60px);
+    padding: 5px 20px;
+    display: none;
+    margin: auto;
+ 
+}
+
+#error-div p{
+    color: white;
+    font-weight: bold;
+}
+    

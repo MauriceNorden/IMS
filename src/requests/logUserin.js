@@ -13,7 +13,7 @@ const { username, email, password} = req.body;
         return { 'code': 2};
     }
     else{
-       return{'code': 0, 'auth': auth, 'username': username};
+       return{'code': 0, 'auth': auth, 'username': username, 'userid': controlAuth(auth).userid};
     }    
 }  
 exports.logUserin = logUserin;

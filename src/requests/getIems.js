@@ -1,12 +1,15 @@
 const { controlAuth } = require("../util/controlAuth");
 const { mysql } = require("../util/mysqlConnect");
-const addCategory = (req) => {
-const { category_name, auth} = req.body;
 
-    if (!category_name || !auth) {
+const getItems = (req) => {
+    const { amount, auth } = req.body;
+    let maxResults = '';
+    if (!auth) {
         return { 'code': 1};   
     }
-
+    if (amount > 0) {
+        maxResults = 'LIMIT ' + amount + ";";
+    }
     if (controlAuth(auth).code !== 0){
         console.log("auth bad")
         return { 'code': 2};
@@ -15,9 +18,13 @@ const { category_name, auth} = req.body;
         if (mysql.error) {
             return {'code': 3, error: mysql.error}
         }else{
-            mysql('INSERT INTO category (category_name) VALUES ("' + category_name + '");');
-            return { 'code': 0};
+            var items = mysql("SELECT * FROM products " + maxResults);
+        return {
+            items,
+            code: 0,
+        };
         }
     }
-}  
-exports.addCategory = addCategory;
+
+};
+exports.getItems = getItems;
